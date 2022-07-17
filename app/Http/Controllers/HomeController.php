@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function trains () {
-        return view('home')->name('home');
+        $trains = \App\Train::all();
+        return view('home', compact('trains'));
     }
 }
